@@ -27,7 +27,13 @@ while game_is_on:
         t.hideturtle()
         t.goto(x, y)
         t.write(answer_state)
- 
+
+    if answer_state == "Exit": 
+        left_states = [state for state in data.state.values if state not in correct_guess]
+        game_is_on = False
+        new_data = pandas.DataFrame(left_states)
+        new_data.to_csv("States_To_Larn.csv")
+
     if len(correct_guess) == 50:
         game_is_on = False
 

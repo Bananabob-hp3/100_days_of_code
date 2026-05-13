@@ -9,6 +9,21 @@ for each_name in invited_names:
         txt.write(new_letter)
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #TODO: Create a letter using starting_letter
 #with open("./Input/Letters/starting_letter.txt", mode="r") as letter:
   # new_letter = letter.readlines()

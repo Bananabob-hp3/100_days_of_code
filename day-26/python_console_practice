@@ -1,0 +1,56 @@
+$ python3
+Python 3.11.2 (main, Nov 30 2024, 21:22:50) [GCC 12.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> new_list = [(n+1) for n in [1, 2, 3]]
+>>> print(new_list)
+[2, 3, 4]
+>>> new_list = [letter for letter in "Angela"]
+>>> print(new_list)
+['A', 'n', 'g', 'e', 'l', 'a']
+>>> range(0, 5)
+range(0, 5)
+>>> range = range(0, 5)
+>>> new_list =  [number*2 for number in range]
+>>> print(new_list)
+[0, 2, 4, 6, 8]
+>>>  names = ["Alex", "Beth", "Caroline", "Dave", "Elanor", "Freddie"]
+  File "<stdin>", line 1
+    names = ["Alex", "Beth", "Caroline", "Dave", "Elanor", "Freddie"]
+IndentationError: unexpected indent
+>>>  names = ["Alex", "Beth", "Caroline", "Dave", "Elanor", "Freddie"]
+  File "<stdin>", line 1
+    names = ["Alex", "Beth", "Caroline", "Dave", "Elanor", "Freddie"]
+IndentationError: unexpected indent
+>>> names = ["Alex", "Beth", "Caroline", "Dave", "Elanor", "Freddie"]
+>>> short_names = [name in name for names if len(name) <= 4 ]
+  File "<stdin>", line 1
+    short_names = [name in name for names if len(name) <= 4 ]
+                                    ^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: expected 'else' after 'if' expression
+>>> short_names = [name in name for names if len(name) < 4 ]
+  File "<stdin>", line 1
+    short_names = [name in name for names if len(name) < 4 ]
+                                    ^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: expected 'else' after 'if' expression
+>>> short_names = [name in name for names if len(name) < 4 ]
+  File "<stdin>", line 1
+    short_names = [name in name for names if len(name) < 4 ]
+                                    ^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: expected 'else' after 'if' expression
+>>> short_names = [name for name in names if len(name) < 4 ]
+>>> print(short_names)
+[]
+>>> print(names)
+['Alex', 'Beth', 'Caroline', 'Dave', 'Elanor', 'Freddie']
+>>> short_names = [name for name in names if len(name) < 5]
+>>> print(short_names)
+['Alex', 'Beth', 'Dave']
+>>> short_names = [name for name in names if len(name) < 4]
+>>> print(short_names)
+[]
+>>> print(names)
+['Alex', 'Beth', 'Caroline', 'Dave', 'Elanor', 'Freddie']
+>>> upper_name = [name.upper() for name in names if len(name) > 5]
+>>> print(upper_name)
+['CAROLINE', 'ELANOR', 'FREDDIE']
+>>> 
