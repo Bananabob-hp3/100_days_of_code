@@ -54,3 +54,6 @@ SyntaxError: expected 'else' after 'if' expression
 >>> print(upper_name)
 ['CAROLINE', 'ELANOR', 'FREDDIE']
 >>> 
+
+
+#DICTIONARY COMPREHENSION
