@@ -1,0 +1,64 @@
+import random
+ascii = """
+                                                                           ,----,                                                                                                     
+                                                                         ,/   .`|                                      ,--.                                                           
+  ,----..                                                              ,`   .'  :  ,---,                             ,--.'|                       ____                                
+ /   /   \                                                           ;    ;     /,--.' |                         ,--,:  : |                     ,'  , `.  ,---,                       
+|   :     :          ,--,                                          .'___,/    ,' |  |  :                      ,`--.'`|  ' :         ,--,     ,-+-,.' _ |,---.'|               __  ,-. 
+.   |  ;. /        ,'_ /|             .--.--.    .--.--.           |    :     |  :  :  :                      |   :  :  | |       ,'_ /|  ,-+-. ;   , |||   | :             ,' ,'/ /| 
+.   ; /--`    .--. |  | :    ,---.   /  /    '  /  /    '          ;    |.';  ;  :  |  |,--.   ,---.          :   |   \ | :  .--. |  | : ,--.'|'   |  ||:   : :      ,---.  '  | |' | 
+;   | ;  __ ,'_ /| :  . |   /     \ |  :  /`./ |  :  /`./          `----'  |  |  |  :  '   |  /     \         |   : '  '; |,'_ /| :  . ||   |  ,', |  |,:     |,-.  /     \ |  |   ,' 
+|   : |.' .'|  ' | |  . .  /    /  ||  :  ;_   |  :  ;_                '   :  ;  |  |   /' : /    /  |        '   ' ;.    ;|  ' | |  . .|   | /  | |--' |   : '  | /    /  |'  :  /   
+.   | '_.' :|  | ' |  | | .    ' / | \  \    `. \  \    `.             |   |  '  '  :  | | |.    ' / |        |   | | \   ||  | ' |  | ||   : |  | ,    |   |  / :.    ' / ||  | '    
+'   ; : \  |:  | : ;  ; | '   ;   /|  `----.   \ `----.   \            '   :  |  |  |  ' | :'   ;   /|        '   : |  ; .':  | : ;  ; ||   : |  |/     '   : |: |'   ;   /|;  : |    
+'   | '/  .''  :  `--'   \'   |  / | /  /`--'  //  /`--'  /            ;   |.'   |  :  :_:,''   |  / |        |   | '`--'  '  :  `--'   \   | |`-'      |   | '/ :'   |  / ||  , ;    
+|   :    /  :  ,      .-./|   :    |'--'.     /'--'.     /             '---'     |  | ,'    |   :    |        '   : |      :  ,      .-./   ;/          |   :    ||   :    | ---'     
+ \   \ .'    `--`----'     \   \  /   `--'---'   `--'---'                        `--''       \   \  /         ;   |.'       `--`----'   '---'           /    \  /  \   \  /           
+  `---`                     `----'                                                            `----'          '---'                                     `-'----'    `----'            
+                                                                                                                                                                                     
+"""
+
+print(ascii)
+print("welcome to the number guessing game!")
+print("I'm thinking of number between 1 and 100.")
+level = input("Chosse a difficulty. Type 'easy' or 'hard':")
+number = random.choice(range(1 , 101))
+def attempt(level):
+    if level == "easy":
+        print("You have 10 attempts remaining to guess the number.")
+        attempts = 10
+        while attempts > 0:
+            attempt = int(input("Make a guess:"))
+            number -= 1
+            if attempt > number:
+                print("Too high")
+                print("go again")
+            elif attempt < number:
+                print("Too low")
+                print("go again.")
+            elif number == 0:
+                print("attempts over you ran out of guesses")    
+            elif attempt != number:
+                print("Yay! you guessed the number. {number}")
+
+        return number
+    elif level == "hard":
+        print("You have 5 attempts to remaining to guess the number.")
+        number = 5
+        while number > 0:
+            attempt = int(input("Make a guess:"))
+            number -= 1
+            if attempt > number:
+                print("Too high")
+                print("go again.")
+            elif attempt < number:
+                print("Too low")
+                print("go again.")
+            elif number == 0:
+                print("attempts over you ran out of guesses")
+            elif attempt != number:
+                print("Yay! you guessed the number.{number}")
+
+        return number
+print(attempt(level))
+print(number)
