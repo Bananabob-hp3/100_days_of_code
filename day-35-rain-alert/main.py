@@ -4,7 +4,6 @@ import time
 from twilio.rest import Client
 
 OWM_URL = "https://api.openweathermap.org/data/2.5/forecast"
-
 params ={
     "lat":os.environ.get("MY_LAT"),
     "lon":os.environ.get("MY_LON"),
@@ -29,5 +28,5 @@ if will_rain:
         .create(
         body="Its going to rain today, Maybe no electricity, Heat Relief",
         from_="+12184504624",
-        to=os.environ.get("Phone_Number")
+        to="+919557633058"
 )
