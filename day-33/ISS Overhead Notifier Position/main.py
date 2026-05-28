@@ -2,6 +2,8 @@ import requests
 from datetime import datetime
 import time
 import smtplib
+from zoneinfo import ZoneInfo
+import pytz
 
 MY_LAT = 29.594
 MY_LONG = 79.302
@@ -12,6 +14,8 @@ parameters = {
     "tzid": "Asia/Kolkata",
     "formatted": 0
 }
+kolkata = pytz.timezone("Asia/Kolkata")
+time_now = datetime.now(kolkata).hour
 
 def is_night():
     response = requests.get(url="https://api.sunrise-sunset.org/json", params=parameters)
@@ -19,10 +23,10 @@ def is_night():
     data = response.json()
     sunrise = int(data["results"]["sunrise"].split("T")[1].split(":")[0])
     sunset = int(data["results"]["sunset"].split("T")[1].split(":")[0])
-    time_now = datetime.now().hour
     if time_now >= sunset or time_now <= sunrise:
         return True
-
+    
+    
 def is_overhead():
     response = requests.get(url="http://api.open-notify.org/iss-now.json")
     response.raise_for_status()
@@ -50,30 +54,18 @@ while True:
                 msg="Subject:ISS Alert!\n\nLook up! ISS is above you!"
             )
             print("Email sent!")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    print(f"Time now: {time_now}")
+    print(f"Is night: {is_night()}")
+    print(f"Is overhead: {is_overhead()}")
+    print("---checking---")
 #starttls() → encrypts the connection 🔒
 #Use App Password not your real Gmail password
 #\n\n separates subject from body
  #checks every 60 second
 
-
-
-
-
-
+print(f"Sunset: {sunset_hour}")
+print(f"Sunrise: {sunrise_hour}")
+print(f"Time now: {time_now}")
 
 
 

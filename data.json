@@ -1,0 +1,7 @@
+{
+    "users": [
+        {"name": "Tarun", "score": 85},
+        {"name": "Bob", "score": 42},
+        {"name": "Alice", "score": 91}
+    ]
+}
