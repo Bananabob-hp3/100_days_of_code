@@ -3,15 +3,16 @@ import requests
 import time
 from twilio.rest import Client
 
+OWM_URL = "https://api.openweathermap.org/data/2.5/forecast"
 
 params ={
-    "lat": os.environ["MY_LAT"],
-    "lon": os.environ["MY_LON"],
-    "appid":os.environ["OWM_API_KEY"],
+    "lat":os.environ.get("MY_LAT"),
+    "lon":os.environ.get("MY_LON"),
+    "appid":os.environ.get("OWM_API_KEY"),
     "cnt": 4
 }
 
-response = requests.get("https://api.openweathermap.org/data/2.5/forecast", params=params)
+response = requests.get(OWM_URL, params=params)
 response.raise_for_status()
 weather_data = response.json()
 
@@ -21,12 +22,12 @@ for item in weather_data["list"]:
     if id < 700:
         will_rain = True
 if will_rain:
-    account_sid = os.environ["TWILIO_ACCOUNT_SID"]
-    auth_token = os.environ["TWILIO_AUTH_TOKEN"]
+    account_sid = os.environ.get("TWILIO_ACCOUNT_SID")
+    auth_token = os.environ.get("TWILIO_AUTH_TOKEN")
     client = Client(account_sid, auth_token)
     message = client.messages \
         .create(
         body="Its going to rain today, Maybe no electricity, Heat Relief",
         from_="+12184504624",
-        to="+919557633058"
+        to=os.environ.get("Phone_Number")
 )
