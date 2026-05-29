@@ -33,4 +33,4 @@ jobs:
           NEWS_API_KEY: ${{ secrets.NA_API_KEY }}
           AVS_API_KEY: ${{ secrets.AVS_API_KEY }}
         # ⚠️ Replace 'your_script.py' with the actual filename of your Python file
-        run: python your_script.py
+        run: python3 main.py
