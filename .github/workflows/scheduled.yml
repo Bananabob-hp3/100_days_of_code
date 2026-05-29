@@ -19,5 +19,3 @@ jobs:
           OWM_API_KEY: ${{ secrets.OWM_API_KEY }}
           ACCOUNT_SID: ${{ secrets.ACCOUNT_SID }}
           AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
-          MY_LAT: ${{ secrets.MY_LAT }}
-          MY_LON: ${{ secrets.MY_LON }}
