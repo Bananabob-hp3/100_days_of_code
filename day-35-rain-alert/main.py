@@ -5,8 +5,8 @@ from twilio.rest import Client
 
 OWM_URL = "https://api.openweathermap.org/data/2.5/forecast"
 params ={
-    "lat":os.environ.get("MY_LAT"),
-    "lon":os.environ.get("MY_LON"),
+    "lat":29.59,
+    "lon":79.30,
     "appid":os.environ.get("OWM_API_KEY"),
     "cnt": 4
 }
@@ -30,3 +30,4 @@ if will_rain:
         from_="+12184504624",
         to="+919557633058"
 )
+
