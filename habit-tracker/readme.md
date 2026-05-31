@@ -7,7 +7,7 @@ intensity of coding by colours being dense or light in order of how many hours a
 This tracker also allows for a update and delete of a data in pixel in case of wrong data added to pixelia.
 
 What I learned:
-I learned type of requests other than GET like POST, UPDATE, DELETE and difference between their parameters
+I learned type of requests other than GET like POST, PUT, DELETE and difference between their parameters
 
 Tech used:
 - Python
