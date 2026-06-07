@@ -1,8 +1,6 @@
 import os
 import requests
 from datetime import datetime
-from datetime import datetime
-
 
 App_Id = os.environ.get("App_ID")
 API_key = os.environ.get("API_key")
@@ -21,7 +19,7 @@ headers = {
 }
 
 nutrition_config = {
-    "query": input("Which exercises did you do today? ")
+    "query": input("Which exercises did you do today?")
 }
 
 

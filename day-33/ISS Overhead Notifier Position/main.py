@@ -25,8 +25,7 @@ def is_night():
     sunset = int(data["results"]["sunset"].split("T")[1].split(":")[0])
     if time_now >= sunset or time_now <= sunrise:
         return True
-    
-    
+
 def is_overhead():
     response = requests.get(url="http://api.open-notify.org/iss-now.json")
     response.raise_for_status()
